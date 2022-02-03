@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+:root {
+    --main-color: seagreen;
+}
+
+/* 공통적인 부분 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+li {list-style: none; }
+a { color: inherit; text-decoration: none; }
+input { outline: none; width: 300px;}
+button { cursor: pointer; }
+
+#wrap {
+    font-size: 16px;
+}
+
+.inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-color: var(--main-color);
+    color: #fff;
+    position: relative;
+    margin-bottom: 50px;
+}
+header .inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#headerBtns {
+    display: flex;
+    align-items: center;
+}
+#headerBtns button {
+    background-color: transparent;
+    color: #fff;
+    margin-right: 16px;
+    font-size: 14px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 5px 8px;
+    transition: 0.5s;
+}
+#headerBtns button:hover {
+    background-color: #fff;
+    color: var(--main-color);
+}
+#logout {
+    margin-left: 16px;
+}
+#headerBtns i {
+    font-size: 22px;
+    line-height: 80px;
+}
+
+h2 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+footer{
+    width: 100%;
+    border-top: 3px solid var(--main-color);
+    height: 70px;
+    line-height: 70px;
+}
+footer .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btnStyle {
+    background-color: var(--main-color);
+    color: #fff;
+}
+/* 공통적인 부분 // */
+
+/* index.php */
+#best {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#best li {
+    width: 33%;
+    text-align: center;
+    margin: 50px 0;
+    transition: 0.5s;
+}
+#best li:hover {
+    transform: scale(1.1);
+}
+
+#register {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+/* index.php // */
+
+/* book_view.php + book_review.php */
+#view_top p {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#view_middle {
+    display: flex;
+    align-items: center;
+}
+#view_middle span {
+    font-weight: bold;
+    margin-right: 16px;
+}
+#view_middle ul {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+} 
+#view_middle > div {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#view_middle p {
+    font-size: 20px;
+}
+.price {
+    color: #aaa;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+.userPrice {
+    color: red;
+}
+#view_middle button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+#view_bottom {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 50px 0;
+}
+#view_bottom .inner {
+    display: flex;
+    border-left: 1px solid #ccc;
+}
+#view_bottom a {
+    padding: 8px 15px;
+    border-right: 1px solid #ccc;
+}
+.cur {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+#view_content h3 {
+    padding-left: 40px;
+}
+.cont {
+    padding: 40px;
+    margin-bottom: 30px;
+}
+/* book_view.php + book_review.php // */
+
+/* book_review.php */
+#view_content ul li {
+    background-color: #eee;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.reviewDate {
+    font-size: 14px;
+    float: right;
+}
+
+#writeReview {
+    width: 90%;
+    margin: 40px;
+    background-color: #eee;
+    margin-bottom: 60px;
+}
+#writeReview tr {
+    border: none;
+}
+#writeReview td {
+    padding: 8px;
+}
+#star {
+    font-size: 16px;
+    width: 50px;
+    line-height: 20px;
+    padding-left: 8px;
+}
+#writeReview textarea {
+    padding: 8px;
+    font-size: 16px;
+}
+#writeReview button {
+    padding: 5px;
+    margin-left: 20px;
+}
+#writeReview .txtCntr {
+    text-align: center;
+}
+/* book_review.php // */
+
+/* book_register.php */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+}
+table tr:not(:last-child){
+    border-bottom: 1px solid #ccc;
+}
+table th, td {
+    padding: 16px;
+}
+#reg th {
+    width: 40%;
+}
+#reg td {
+    width: 60%;
+}
+#reg input {
+    line-height: 20px;
+    padding-left: 8px;
+}
+
+#regBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+#regBtns li:nth-child(1){
+    margin-right: 20px;
+}
+#regBtns button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+/* book_register.php // */
+
+/* book_cart.php */
+#cart {
+    text-align: center;
+    margin-bottom: 50px;
+}
+#cart .info {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#cart input {
+    width: 30px;
+    border: none;
+    padding: 8px;
+    background-color: orange;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+}
+/* book_cart.php // */
