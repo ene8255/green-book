@@ -1,5 +1,7 @@
 <?php 
-    $conn = mysqli_connect('localhost','root','1234','green_book');
+    // 다른 파일에서 데이터베이스 정보 가져오기
+    include '../config/rds.php';
+    $conn = mysqli_connect($host, $user, $pw, $db);
     // $hashedPassword = password_hash($_POST['userPw'], PASSWORD_DEFAULT);
     // echo $hashedPassword;
     $sqlstr = "insert into member(id, pw, date, name)

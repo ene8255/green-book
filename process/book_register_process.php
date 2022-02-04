@@ -3,6 +3,7 @@
     $writer = $_POST['writer'];
     $publisher = $_POST['publisher'];
     $pub_date = $_POST['pub_date'];
+    $genre = $_POST['genre'];
     $price = $_POST['price'];
     $desc = $_POST['desc'];
 
@@ -10,7 +11,7 @@
     $fileType = $fileTypeArr[0];
     $fileExt = $fileTypeArr[1];
 
-    if($title!="" && $writer!="" && $publisher!="" && $pub_date!="" && $price!="" && $desc!=""){
+    if($title!="" && $writer!="" && $publisher!="" && $pub_date!="" && $genre!="" && $price!="" && $desc!=""){
         if($fileType == "image"){
             if($fileExt == "jpeg" || $fileExt == "jpg" || $fileExt == "png" || $fileExt == "gif"){
                 $tempFile = $_FILES['imgFile']['tmp_name'];
@@ -20,9 +21,11 @@
                 $descFile = "../desc/{$title}";
                 file_put_contents($descFile, $desc);
 
-                $conn = mysqli_connect('localhost', 'root', '1234', 'green_book');
-                $sqlstr =  "insert into bestseller(title, writer, publisher, pub_date, price, description, imgsrc)
-                            values('{$title}', '{$writer}', '{$publisher}', '{$pub_date}', '{$price}', '{$descFile}', '{$resFile}')";
+                // 다른 파일에서 데이터베이스 정보 가져오기
+                include '../config/rds.php';
+                $conn = mysqli_connect($host, $user, $pw, $db);
+                $sqlstr =  "insert into bestseller(title, writer, publisher, pub_date, price, description, imgsrc, genre)
+                            values('{$title}', '{$writer}', '{$publisher}', '{$pub_date}', '{$price}', '{$descFile}', '{$resFile}', '{$genre}')";
                 $result = mysqli_query($conn, $sqlstr);
                 header("Location: ../index.php");
             }
@@ -37,7 +40,7 @@
     }else{
 ?>
     <script>
-        alert("모든 칸에 내용을 적어주세요!");
+        alert("모든 항목에 내용을 적어주세요!");
         history.back();
     </script>
 <?php

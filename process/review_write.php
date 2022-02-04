@@ -1,6 +1,8 @@
 <?php
     session_start();
-    $conn = mysqli_connect('localhost', 'root', '1234', 'green_book');
+    // 다른 파일에서 데이터베이스 정보 가져오기
+    include '../config/rds.php';
+    $conn = mysqli_connect($host, $user, $pw, $db);
     $sqlstr1 =  "select * from member
                 where name='{$_SESSION['username']}'";
     $result1 = mysqli_query($conn, $sqlstr1);

@@ -3,17 +3,17 @@
             <h2>로그인</h2>
             <table id="login">
                 <form action="../process/login_process.php" id="loginForm" method="post">
-                <tr>
-                    <th>아이디</th>
-                    <td><input type="text" name="userId" id="userId"></td>
-                    <td rowspan="2">
-                        <button id="loginBtn" class="btnStyle">Login</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th>비밀번호</th>
-                    <td><input type="password" name="userPw" id="userPw"></td>
-                </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <td><input type="text" name="userId" id="userId"></td>
+                        <td rowspan="2">
+                            <button id="loginBtn" class="btnStyle">로그인</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" name="userPw" id="userPw"></td>
+                    </tr>
                 </form>
             </table>
         </main>

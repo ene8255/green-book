@@ -13,19 +13,26 @@
                 while($row = mysqli_fetch_array($result)){
                     if(isset($_SESSION["{$row['title']}"])){
                         $imgsrc = explode("../", $row['imgsrc']);
-                        $userPrice = $row['price']*0.9;
+                        $price = number_format($row['price']);
+                        $userPrice = number_format($row['price'] * 0.9);
                         echo "<tr>";
-                        echo "<td class='info'><img src='{$imgsrc[1]}' width='50'><span>{$row['title']}</span></td>";
+                        echo "<td class='info'>
+                                <img src='{$imgsrc[1]}' width='50'>
+                                <span>{$row['title']}</span>
+                              </td>";
                         if(isset($_SESSION['username'])){
-                            echo "<td><span class='price'>{$row['price']}원</span><br>
-                                  <span class='userPrice'>{$userPrice}원</span></td>";
+                            echo "<td>
+                                    <span class='price'>{$price}원</span>
+                                    <br>
+                                    <span class='userPrice'>{$userPrice}원</span>
+                                  </td>";
                         }else{
-                            echo "<td>{$row['price']}원</td>";
+                            echo "<td>{$price}원</td>";
                         }
                         echo "<td>
                               <form action='process/del_cart_process.php' method='post'>
                                 <input type='hidden' name='title' value='{$row['title']}'>
-                                <input type='submit' value='X'>
+                                <button type='submit'><i class='material-icons'>delete</i></button>
                               </form>
                               </td>";
                         echo "</tr>";
