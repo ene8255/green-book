@@ -11,39 +11,30 @@
     $fileType = $fileTypeArr[0];
     $fileExt = $fileTypeArr[1];
 
-    if($title!="" && $writer!="" && $publisher!="" && $pub_date!="" && $genre!="" && $price!="" && $desc!=""){
-        if($fileType == "image"){
-            if($fileExt == "jpeg" || $fileExt == "jpg" || $fileExt == "png" || $fileExt == "gif"){
-                $tempFile = $_FILES['imgFile']['tmp_name'];
-                $resFile = "../images/{$_FILES['imgFile']['name']}";
-                $imgUpload = move_uploaded_file($tempFile, $resFile);
+    if($fileType == "image"){
+        if($fileExt == "jpeg" || $fileExt == "jpg" || $fileExt == "png" || $fileExt == "gif"){
+            $tempFile = $_FILES['imgFile']['tmp_name'];
+            $resFile = "../images/{$_FILES['imgFile']['name']}";
+            $imgUpload = move_uploaded_file($tempFile, $resFile);
 
-                $descFile = "../desc/{$title}";
-                file_put_contents($descFile, $desc);
+            $descFile = "../desc/{$title}";
+            file_put_contents($descFile, $desc);
 
-                // 다른 파일에서 데이터베이스 정보 가져오기
-                include '../config/rds.php';
-                $conn = mysqli_connect($host, $user, $pw, $db);
-                $sqlstr =  "insert into bestseller(title, writer, publisher, pub_date, price, description, imgsrc, genre)
-                            values('{$title}', '{$writer}', '{$publisher}', '{$pub_date}', '{$price}', '{$descFile}', '{$resFile}', '{$genre}')";
-                $result = mysqli_query($conn, $sqlstr);
-                header("Location: ../index.php");
-            }
-        }else{
+            // 다른 파일에서 데이터베이스 정보 가져오기
+            include '../config/rds.php';
+            $conn = mysqli_connect($host, $user, $pw, $db);
+            $sqlstr =  "insert into bestseller(title, writer, publisher, pub_date, price, description, imgsrc, genre)
+                        values('{$title}', '{$writer}', '{$publisher}', '{$pub_date}', '{$price}', '{$descFile}', '{$resFile}', '{$genre}')";
+            $result = mysqli_query($conn, $sqlstr);
+            header("Location: ../index.php");
+        }
+    }else{
 ?>
         <script>
             alert('jpeg, jpg, png, gif 파일만 업로드 가능합니다.');
             history.back();
         </script>
 <?php          
-        }
-    }else{
-?>
-    <script>
-        alert("모든 항목에 내용을 적어주세요!");
-        history.back();
-    </script>
-<?php
     }
 ?>
     
