@@ -62,8 +62,9 @@
                     <?php
                         // 로그인 되어 있을때와 안 되어 있을때 구분
                         session_start();
-                        if(isset($_SESSION['username'])){
-                            echo "<span>{$_SESSION['username']}님 안녕하세요 :) </span>";
+                        if(isset($_SESSION['username']) || isset($_SESSION['admin'])){
+                            $name = $_SESSION['username'] ?? $_SESSION['admin'];
+                            echo "<span>{$name}님 안녕하세요 :) </span>";
                             echo "<button onclick='location.href=\"process/logout_process.php\"' id='logout'> 로그아웃</button>";
                             // 카트에 상품이 있는지 없는지 구분
                             cartIcon();

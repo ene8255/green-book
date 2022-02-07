@@ -5,19 +5,27 @@
                 <table id="join">
                     <tr>
                         <th>이름</th>
-                        <td><input type="text" name="userName" id="userName"></td>
+                        <td>
+                            <input type="text" name="userName" id="userName" required>
+                        </td>
                     </tr>
                     <tr>
                         <th>아이디</th>
-                        <td><input type="text" name="userId" id="userId" ></td>
+                        <td>
+                            <input type="text" name="userId" id="userId" required>
+                        </td>
                     </tr>
                     <tr>
                         <th>비밀번호</th>
-                        <td><input type="password" name="userPw" id="userPw" placeholder="비밀번호는 8자리로 입력해주세요"></td>
+                        <td>
+                            <input type="password" name="userPw" id="userPw" placeholder="비밀번호는 8자리로 입력해주세요" required>
+                        </td>
                     </tr>
                     <tr>
                         <th>비밀번호체크</th>
-                        <td><input type="password" name="userPwch" id="userPwch" placeholder="비밀번호와 일치하게 입력해주세요"></td>
+                        <td>
+                            <input type="password" name="userPwch" id="userPwch" placeholder="비밀번호와 일치하게 입력해주세요" required>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -36,6 +44,7 @@
         </footer>
     </div>
     <script>
+        // 변수 정의
         const joinForm = document.querySelector('#joinForm');
         const joinBtn = document.querySelector('#joinButton');
         const pw = document.querySelector('#userPw');
@@ -43,23 +52,19 @@
         const id = document.querySelector('#userId');
         const name = document.querySelector('#userName');
     
+        // 회원가입 버튼을 클릭하면 이벤트가 실행됨
         joinBtn.addEventListener('click',function(){
-            //아이디,네임,패스워드,패스워드 체크의 값이 입력되었는지
-            if(id.value != "" && name.value != "" && pw.value != "" && pwch.value != ""){
-                    if(pw.value.length == 8){
-                        if(pw.value == pwch.value){
-                            joinForm.submit();
-                        }else {
-                            alert('비밀번호와 비밀번호체크가 일치하지 않습니다.');
-                            return false;
-                        }
-                    }else {
-                        alert('비밀번호는 8자리로 해주세요');
-                        return false;
-                    }
-                } 
-            else {
-                alert("입력칸을 다 입력해주세요.");
+            // 비밀번호가 8자리 이상인지 확인
+            if(pw.value.length >= 8){
+                // 비밀번호와 비밀번호체크의 값이 같은지 확인
+                if(pw.value == pwch.value){
+                    joinForm.submit();
+                }else {
+                    alert('비밀번호와 비밀번호체크가 일치하지 않습니다.');
+                    return false;
+                }
+            }else {
+                alert('비밀번호는 8자리 이상이어야 합니다.');
                 return false;
             }
         })

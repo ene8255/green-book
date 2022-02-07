@@ -23,11 +23,14 @@
                     <option value="">전체보기</option>
                     <?php
                         $result = mysql();
+                        // genre라는 배열을 생성하여 genre 데이터만 담기
                         $genre = array();
                         while($row = mysqli_fetch_array($result)) {
                             $genre[] = $row['genre'];
                         }
+                        // genre 배열에서 중복 제거
                         $uniGenre = array_unique($genre);
+                        // genre 배열의 값의 갯수만큼 select의 option 요소 생성
                         foreach($uniGenre as $g) {
                             echo "<option value={$g}>$g</option>";
                         }
@@ -38,7 +41,9 @@
         </div>
         <ul id="best">
             <?php
+                // 위의 form이 submit 되었는지 아닌지 확인
                 if(isset($_POST['gSubmit'])) {
+                    // Genre값이 비어 있는지 아닌지 확인
                     if(!empty($_POST['Genre'])) {
                         $selected = $_POST['Genre'];
                         $sqlstr = "select * from bestseller where genre = '{$selected}'";

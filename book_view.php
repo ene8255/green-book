@@ -1,7 +1,7 @@
 <?php include_once 'include/header.php'; ?>
     <?php
         // get 방식으로 전달받은 특정 no의 데이터만 가져옴
-        $sqlstr =  "select * from bestseller where no={$_GET['no']}";
+        $sqlstr = "select * from bestseller where no={$_GET['no']}";
         $result = mysql($sqlstr);
         $row = mysqli_fetch_array($result);
         // imgsrc 데이터는 가공하여 사용함
@@ -68,8 +68,24 @@
             <h3>책 소개</h3>
             <p class="cont">
                 <!-- desc 폴더의 파일 중에서 이름이 title과 같은 파일의 내용을 가져옴 -->
-                <?=file_get_contents('desc/'.$row['title'])?>
+                <?php
+                    $contents = file_get_contents('desc/'.$row['title']);
+                    // 가져온 텍스트 데이터 개행문자 처리 (줄바꿈)
+                    echo nl2br($contents);
+                ?>
             </p>
         </section>
+        <?php
+            if(isset($_SESSION['admin'])) {
+                $no = $row['no'];
+                echo "<section id='adminBtns' class='inner'>
+                        <span><a href='book_edit.php?no={$no}'>수정하기</a></span>
+                        <form action='process/book_del_process.php' method='post'>
+                            <input type='hidden' name='no' value='{$no}'>
+                            <button type='submit'>삭제하기</button>
+                        </form>
+                      </section>";
+            }
+        ?>
     </main>
 <?php include_once 'include/footer.php'; ?>

@@ -60,12 +60,12 @@
         <section id="view_content" class="inner">
             <div>
                 <h3>리뷰 쓰기</h3>
-                <form action="process/review_write.php" method="post">
+                <form action="process/review_write_process.php" method="post">
                     <!-- 리뷰 작성하기 버튼을 클릭하면 숨겨진 input을 통해 title 데이터를 post 방식으로 전달해줌 -->
                     <input type="hidden" name="title" value="<?=$row['title']?>">
                     <table id="writeReview">
                         <?php
-                            // 로그인 되어 있는 경우와 아닌 경우를 구분
+                            // 로그인 되어 있는 경우와 아닌 경우를 구분 (로그인 되어 있으면 리뷰 작성 가능)
                             if(isset($_SESSION['username'])){
                                 echo "<tr>";
                                 echo "<td class='txtCntr'>별점</td>";
@@ -92,9 +92,11 @@
             <h3>책 리뷰</h3>
                 <ul class="cont">
                     <?php
+                        // 변수 정의
                         $count = 0;
                         $sqlstr2 = "select * from review where title='{$row['title']}'";
                         $result2 = mysql($sqlstr2);
+                        // 리뷰 결과값의 갯수만큼 li 요소 나타내기
                         while($row2 = mysqli_fetch_array($result2)){
                             echo "<li>{$row2['id']} ";
                             echo "<span class='reviewDate'>{$row2['date']}</span>";
@@ -106,6 +108,7 @@
                             echo "{$row2['comment']}</li>";
                             $count++;
                         }
+                        // count가 0이라면 리뷰가 없다고 나타내기
                         if($count == 0){
                             echo "<li>아직 작성된 리뷰가 없습니다.</li>";
                         }

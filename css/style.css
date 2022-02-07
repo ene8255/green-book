@@ -13,7 +13,7 @@
 
 /* 공통적인 부분 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-li {list-style: none; }
+li { list-style: none; }
 a { color: inherit; text-decoration: none; }
 input, select, textarea { outline: none; font-family: inherit; }
 input, select { width: 300px; }
@@ -318,14 +318,26 @@ table th, td {
 #cart .info span {
     margin-left: 24px;
 }
-#cart button {
+
+#deleteOne button {
     width: 30px;
     border: none;
     background-color: transparent;
     color: gray;
     transition: 0.5s;
 }
-#cart button:hover {
+#deleteOne button:hover {
+    color: orangered;
+}
+
+#deleteAll button {
+    background-color: transparent;
+    border: 3px solid var(--main-color);
+    border-radius: 8px;
+    color: var(--main-color);
+    padding: 4px;
+}
+#deleteAll button:hover {
     color: orangered;
 }
 /* book_cart.php // */
