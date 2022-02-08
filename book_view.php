@@ -76,12 +76,13 @@
             </p>
         </section>
         <?php
+            // 관리자 계정으로 로그인 되어 있으면 수정하기와 삭제하기 버튼 보여주기
             if(isset($_SESSION['admin'])) {
                 $no = $row['no'];
                 echo "<section id='adminBtns' class='inner'>
-                        <span><a href='book_edit.php?no={$no}'>수정하기</a></span>
+                        <a href='book_edit.php?no={$no}'>수정하기</a>
                         <form action='process/book_del_process.php' method='post'>
-                            <input type='hidden' name='no' value='{$no}'>
+                            <input type='hidden' name='imgsrc' value='{$row['imgsrc']}'>
                             <button type='submit'>삭제하기</button>
                         </form>
                       </section>";

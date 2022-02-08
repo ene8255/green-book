@@ -219,6 +219,24 @@ footer .inner {
     padding: 40px;
     margin-bottom: 30px;
 }
+
+#adminBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+#adminBtns a, button {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+#adminBtns a {
+    margin-right: 16px;
+}
 /* book_view.php + book_review.php // */
 
 /* book_review.php */
@@ -263,7 +281,7 @@ footer .inner {
 }
 /* book_review.php // */
 
-/* book_register.php */
+/* book_register.php + book_edit.php */
 table {
     border-collapse: collapse;
     width: 70%;
@@ -275,29 +293,29 @@ table tr:not(:last-child){
 table th, td {
     padding: 16px;
 }
-#reg th {
+.bookForm th {
     width: 40%;
 }
-#reg td {
+.bookForm td {
     width: 60%;
 }
-#reg input, select, textarea {
+.bookForm input, select, textarea {
     line-height: 20px;
     padding: 5px 8px;
     font-weight: bold;
     font-size: 16px;
 }
 
-#regBtns {
+.formBtns {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 40px 0;
 }
-#regBtns li:nth-child(1){
+.formBtns li:nth-child(1){
     margin-right: 20px;
 }
-#regBtns button {
+.formBtns button {
     border: none;
     padding: 8px 16px;
     border-radius: 10px;
@@ -341,3 +359,14 @@ table th, td {
     color: orangered;
 }
 /* book_cart.php // */
+
+/* book_edit.php */
+#originalCk {
+    margin-top: 8px;
+    font-weight: bold;
+}
+#originalCk input {
+    width: 40px;
+}
+
+/* book_edit.php // */

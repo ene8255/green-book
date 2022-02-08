@@ -2,7 +2,7 @@
         <main class="inner">
             <h2>책 등록하기</h2>
             <form action="process/book_register_process.php" method="post" enctype="multipart/form-data">
-                <table id="reg">
+                <table class="bookForm">
                     <tr>
                         <th>책 제목</th>
                         <td><input type="text" name="title" required></td>
@@ -52,7 +52,7 @@
                         <td><input type="file" name="imgFile" accept="image/*" required></td>
                     </tr>
                 </table>
-                <ul id="regBtns">
+                <ul class="formBtns">
                     <li><button type="submit" class="btnStyle">등록하기</button></li>
                     <li><button type="reset" class="btnStyle">취소</button></li>
                 </ul>

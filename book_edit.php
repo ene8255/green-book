@@ -9,11 +9,15 @@
     ?>
     <main class="inner">
         <h2>책 수정하기</h2>
-        <form action="process/book_register_process.php" method="post" enctype="multipart/form-data">
-            <table id="reg">
+        <form action="process/book_edit_process.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="no" value="<?=$row['no']?>">
+            <table class="bookForm">
                 <tr>
                     <th>책 제목</th>
-                    <td><input type="text" name="title" value="<?=$row['title']?>" required></td>
+                    <td>
+                        <input type="hidden" name="originalTitle" value="<?=$row['title']?>">
+                        <input type="text" name="title" value="<?=$row['title']?>" required>
+                    </td>
                 </tr>
                 <tr>
                     <th>작가</th>
@@ -56,24 +60,25 @@
                 <tr>
                     <th>책 설명</th>
                     <td>
-                        <textarea name="desc" id="desc" cols="40" rows="10" required>
-                            <?php
+                        <textarea name="desc" id="desc" cols="40" rows="10" required
+                        ><?php
                                 $contents = file_get_contents('desc/'.$row['title']);
                                 echo $contents;
-                            ?>
-                        </textarea>
+                        ?></textarea>
                     </td>
                 </tr>
                 <tr>
                     <th>사진</th>
                     <td>
-                        <input type="file" name="imgFile" accept="image/*" required>
-                        <input type="checkbox" name="originalCk"> 기존 이미지 사용하기
-                        <!-- 아직 미완성!! -->
+                        <input type="file" name="imgFile" accept="image/*">
+                        <p id="originalCk">
+                            <input type="checkbox" name="originalCk"> 원래 이미지 사용하기
+                            <input type="hidden" name="originalImg" value="<?=$row['imgsrc']?>">
+                        </p>
                     </td>
                 </tr>
             </table>
-            <ul id="regBtns">
+            <ul class="formBtns">
                 <li><button type="submit" class="btnStyle">수정하기</button></li>
                 <li><button type="reset" class="btnStyle">원래대로</button></li>
             </ul>
