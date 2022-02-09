@@ -13,7 +13,18 @@
                   </li>";
         }
     }
-?>
+?>  
+    <!-- carousel slider -->
+    <section id="slider" class="inner">
+        <div id="slide-group-view">
+            <div id="slide-group">
+                <img src="banners/banner1.png" alt="2022 베스트셀러" class="slide-img">
+                <img src="banners/banner2.png" alt="로그인하고 책리뷰 작성" class="slide-img">
+                <img src="banners/banner3.png" alt="회원가입하면 10% 할인" class="slide-img">
+            </div>
+        </div>
+    </section>
+    <!-- carousel slider // -->
     <main class="inner">
         <h2>베스트셀러</h2>
         <div id="sortBook">
@@ -56,8 +67,13 @@
                 }
             ?>
         </ul>
-        <p id="register" class="btnStyle">
-            <a href="book_register.php">책 등록하기</a>
-        </p>
+        <?php
+            // 관리자 계정으로 로그인 되어 있는 경우에만 책 등록하기 버튼 표시
+            if(isset($_SESSION['admin'])) {
+                echo '<p id="register" class="btnStyle">
+                        <a href="book_register.php">책 등록하기</a>
+                      </p>';
+            }
+        ?>
     </main>
 <?php include_once 'include/footer.php'; ?>
