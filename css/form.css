@@ -1,0 +1,51 @@
+/* book_register.php + book_edit.php */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+}
+table tr:not(:last-child){
+    border-bottom: 1px solid #ccc;
+}
+table th, td {
+    padding: 16px;
+}
+.bookForm th {
+    width: 40%;
+}
+.bookForm td {
+    width: 60%;
+}
+.bookForm input, select, textarea {
+    line-height: 20px;
+    padding: 5px 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.formBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+.formBtns li:nth-child(1){
+    margin-right: 20px;
+}
+.formBtns button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+/* book_register.php + book_edit.php // */
+
+/* book_edit.php */
+#originalCk {
+    margin-top: 8px;
+    font-weight: bold;
+}
+#originalCk input {
+    width: 40px;
+}
+
+/* book_edit.php // */

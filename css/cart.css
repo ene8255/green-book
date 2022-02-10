@@ -1,0 +1,37 @@
+/* book_cart.php */
+#cart {
+    text-align: center;
+    margin-bottom: 50px;
+}
+#cart .info {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+#cart .info span {
+    margin-left: 24px;
+}
+
+#deleteOne button {
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    color: gray;
+    transition: 0.5s;
+}
+#deleteOne button:hover {
+    color: orangered;
+}
+
+#deleteAll button {
+    background-color: transparent;
+    border: 3px solid var(--main-color);
+    border-radius: 8px;
+    color: var(--main-color);
+    padding: 4px;
+}
+#deleteAll button:hover {
+    color: orangered;
+}
+/* book_cart.php // */

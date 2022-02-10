@@ -23,14 +23,11 @@
                 <img src="banners/banner3.png" alt="회원가입하면 10% 할인" class="slide-img">
             </div>
         </div>
-        <ul id="nav">
-            <li id="prev">
-                <i class='material-icons'>arrow_back_ios</i>
-            </li>
-            <li id="next">
-                <i class='material-icons'>arrow_forward_ios</i>
-            </li>
-        </ul>
+        <div id="nav">
+            <i class='material-icons' id='prev'>arrow_back_ios</i>
+            <i class='material-icons' id='next'>arrow_forward_ios</i>
+        </div>
+        <ul id="indicator"></ul>
     </section>
     <!-- carousel slider // -->
     <main class="inner">
