@@ -7,11 +7,11 @@
         // imgsrc 데이터는 가공하여 사용함
         $imgsrc = explode("../", $row['imgsrc']);
     ?>
-    <main class="inner">
+    <main>
         <h2>책 수정하기</h2>
         <form action="process/book_edit_process.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="no" value="<?=$row['no']?>">
-            <table class="bookForm">
+            <table class="bookForm inner">
                 <tr>
                     <th>책 제목</th>
                     <td>

@@ -1,113 +1,9 @@
-@charset "utf-8";
-
-@font-face {
-    font-family: 'KOTRA_GOTHIC';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-:root {
-    --main-color: seagreen;
-}
-
-/* 공통적인 부분 */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-li { list-style: none; }
-a { color: inherit; text-decoration: none; }
-input, select, textarea { outline: none; font-family: inherit; }
-input, select { width: 300px; }
-button { cursor: pointer; font-family: inherit; }
-
-#wrap {
-    font-size: 18px;
-    font-family: 'KOTRA_GOTHIC';
-}
-
-.inner {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-header{
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    background-color: var(--main-color);
-    color: #fff;
-    position: relative;
-    margin-bottom: 50px;
-}
-header .inner {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 80px;
-}
-header h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#headerBtns {
-    height: 80px;
-    display: flex;
-    align-items: center;
-}
-#headerBtns button {
-    background-color: transparent;
-    color: #fff;
-    margin-right: 16px;
-    font-size: 14px;
-    border: 1px solid #fff;
-    border-radius: 8px;
-    padding: 6px 8px;
-    transition: 0.5s;
-}
-#headerBtns button:hover {
-    background-color: #fff;
-    color: var(--main-color);
-}
-#logout {
-    margin-left: 16px;
-}
-#headerBtns i {
-    font-size: 24px;
-    line-height: 80px;
-}
-
-h2 {
-    text-align: center;
-    margin: 40px 0;
-}
-
-footer{
-    width: 100%;
-    border-top: 3px solid var(--main-color);
-    height: 70px;
-    line-height: 70px;
-    margin-top: 40px;
-}
-footer .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.btnStyle {
-    background-color: var(--main-color);
-    color: #fff;
-    font-size: 16px;
-}
-/* 공통적인 부분 // */
-
 /* index.php */
-/* carousel slider */
+    /* carousel slider */
 #slider {
     position: relative;
     margin-bottom: 80px;
+    margin-top: 130px;
 }
 #slide-group-view {
     width: 100%;
@@ -115,7 +11,6 @@ footer .inner {
     /* height: 30vh; */
     /* height: 16%; */
     position: relative;
-    /* margin-top: -50px; */
     overflow: hidden;
     border-radius: 24px;
 }
@@ -133,6 +28,7 @@ footer .inner {
     left: 0;
     width: 100%;
 }
+
 #nav {
     width: 90%;
     height: 50px;
@@ -148,6 +44,7 @@ footer .inner {
 #nav i {
     cursor: pointer;
 }
+
 #indicator {
     width: 10%;
     max-width: 150px;
@@ -176,7 +73,7 @@ footer .inner {
     box-shadow: none;
     background-color: #fff;
 }
-/* carousel slider // */
+    /* carousel slider // */
 
 #sortBook {
     display: flex;
@@ -223,3 +120,73 @@ footer .inner {
     margin: 0 auto;
 }
 /* index.php // */
+
+
+/* 반응형 */
+@media screen and (max-width: 1200px) {
+    #slide-group-view {
+        height: 30vh;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #slide-group-view {
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #slider {
+        margin-bottom: 56px;
+    }
+    #slide-group-view {
+        height: 20vh;
+        border-radius: 16px;
+    }
+    #indicator li {
+        width: 8px;
+        height: 8px;
+    }
+    #best li img {
+        width: 70%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #slider {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    #slide-group-view {
+        height: 16vh;
+        border-radius: 0;
+    }
+    #nav i {
+        font-size: 0.8rem;
+    }
+    #indicator {
+        bottom: 10%;
+    }
+    #indicator li {
+        width: 5px;
+        height: 5px;
+        box-shadow: 0.5px 0.5px 0 #999;
+        border: 1px solid #999;
+    }
+    #sortBook select {
+        font-size: 0.8rem;
+    }
+    #best li {
+        margin: 24px 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #slider {
+        margin-top: 140px;
+    }
+    #slide-group-view {
+        height: 10vh;
+    }
+}

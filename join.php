@@ -1,7 +1,7 @@
-<?php include_once '../include/mem_header.php'; ?>
+<?php include_once 'include/header.php'; ?>
         <main>
             <h2>회원가입</h2>
-            <form action="../process/join_process.php" method="post" id="joinForm">
+            <form action="process/join_process.php" method="post" id="joinForm">
                 <table id="join">
                     <tr>
                         <th>이름</th>

@@ -1,13 +1,14 @@
 /* book_register.php + book_edit.php */
-table {
+.bookForm {
     border-collapse: collapse;
     width: 70%;
+    max-width: 800px;
     margin: 0 auto;
 }
 table tr:not(:last-child){
     border-bottom: 1px solid #ccc;
 }
-table th, td {
+table th,td {
     padding: 16px;
 }
 .bookForm th {
@@ -47,5 +48,29 @@ table th, td {
 #originalCk input {
     width: 40px;
 }
-
 /* book_edit.php // */
+
+/* 반응형 */
+@media screen and (max-width: 710px) {
+    .bookForm input, select, textarea {
+        font-size: 0.8rem;
+        line-height: 1rem;
+        width: 90%;
+    }
+    .bookForm th {
+        width: 30%;
+    }
+    .bookForm td {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .bookForm {
+        width: 90%;
+    }
+    .bookForm input, select, textarea {
+        font-size: 0.5rem;
+        line-height: 0.8rem;
+    }
+}

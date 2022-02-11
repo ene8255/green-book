@@ -25,13 +25,32 @@
 }
 
 #deleteAll button {
-    background-color: transparent;
-    border: 3px solid var(--main-color);
+    background-color: var(--main-color);
     border-radius: 8px;
-    color: var(--main-color);
-    padding: 4px;
+    color: #fff;
+    padding: 5px;
 }
 #deleteAll button:hover {
-    color: orangered;
+    background-color: coral;
 }
 /* book_cart.php // */
+
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+    #cart .info {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #cart .info {
+        width: 90%;
+    }
+    #cart th,td {
+        padding: 8px !important;
+    }
+    #deleteOne button i {
+        font-size: 1.2rem;
+    }
+}

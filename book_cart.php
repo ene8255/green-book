@@ -1,7 +1,7 @@
 <?php include_once 'include/header.php'; ?>
-    <main class="inner">
+    <main>
         <h2>장바구니</h2>
-        <table id="cart">
+        <table id="cart" class="inner">
             <tr>
                 <th width="60%">상품정보</th>
                 <th width="20%">가격</th>

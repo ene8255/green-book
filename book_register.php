@@ -1,8 +1,8 @@
 <?php include_once 'include/header.php'; ?>
-        <main class="inner">
+        <main>
             <h2>책 등록하기</h2>
             <form action="process/book_register_process.php" method="post" enctype="multipart/form-data">
-                <table class="bookForm">
+                <table class="bookForm inner">
                     <tr>
                         <th>책 제목</th>
                         <td><input type="text" name="title" required></td>

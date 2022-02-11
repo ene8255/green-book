@@ -65,7 +65,6 @@
 }
 .cont {
     padding: 40px;
-    /* margin-bottom: 30px; */
 }
 
 #adminBtns {
@@ -100,7 +99,7 @@
 
 #writeReview {
     width: 90%;
-    margin: 40px;
+    margin-top: 40px;
     background-color: #eee;
     margin-bottom: 60px;
 }
@@ -117,6 +116,7 @@
     padding: 5px 8px;
 }
 #writeReview textarea {
+    width: 90%;
     padding: 8px;
     font-size: 16px;
 }
@@ -126,5 +126,59 @@
 }
 #writeReview .txtCntr {
     text-align: center;
+    width: 20%;
 }
 /* book_review.php // */
+
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+    #view_middle {
+        flex-direction: column;
+    }
+    #view_middle ul {
+        width: 90%;
+        margin-bottom: 24px;
+    }
+    #view_middle > div {
+        width: 60%;
+    }
+    #view_middle p {
+        font-size: 1.1rem;
+    }
+    #adminBtns a, button {
+        font-size: 0.8rem;
+    }
+
+    /* book_review.php */
+    #writeReview textarea {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    #view_top img {
+        width: 70%;
+    }
+    #view_middle > div {
+        width: 80%;
+    }
+
+    /* book_review.php */
+    .reviewDate {
+        font-size: 0.5rem;
+    }
+    #writeReview {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #view_middle ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    #view_middle ul li {
+        margin-bottom: 8px;
+    }
+}

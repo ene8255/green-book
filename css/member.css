@@ -1,0 +1,90 @@
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+table input {
+    line-height: 20px;
+    padding: 5px 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+table button {
+    font-size: 14px;
+}
+
+/* join.php */
+#join {
+    width: 50%;
+    max-width: 800px;
+}
+#join th,td {
+    padding: 16px;
+}
+#join th {
+    width: 40%;
+}
+#join tr:first-child {
+    border-top: 1px solid #ccc;
+}
+#join tr:not(:last-child){
+    border-bottom: 1px solid #ccc;
+}
+#join tr:last-child {
+    text-align: center;
+}
+#join button {
+    margin-top: 16px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+#join button:first-child {
+    margin-right: 25px;
+}
+/* join.php // */
+
+/* login.php */
+#loginBtn {
+    border: none;
+    padding: 16px;
+}
+/* login.php // */
+
+
+/* 반응형 */
+@media screen and (max-width: 895px) {
+    #join {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    #join {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    table input{
+        font-size: 0.8rem;
+        line-height: 1rem;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #login {
+        width: 90%;
+    }
+    #login th,td {
+        padding: 8px;
+    }
+    #login th {
+        min-width: 60px;
+    }
+    #loginBtn {
+        min-width: 48px;
+        padding: 10px;
+    }
+}

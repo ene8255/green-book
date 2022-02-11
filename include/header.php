@@ -50,10 +50,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/view.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/member.css">
     <script src="js/slider.js" defer></script>
     <title>Green Book</title>
 </head>
@@ -73,8 +75,8 @@
                             // 카트에 상품이 있는지 없는지 구분
                             cartIcon();
                         }else{
-                            echo "<button onclick='location.href=\"member/join.php\"'> 회원가입 </button>";
-                            echo "<button onclick='location.href=\"member/login.php\"'> 로그인 </button>";
+                            echo "<button onclick='location.href=\"join.php\"'> 회원가입 </button>";
+                            echo "<button onclick='location.href=\"login.php\"'> 로그인 </button>";
                             // 카트에 상품이 있는지 없는지 구분
                             cartIcon();
                         }

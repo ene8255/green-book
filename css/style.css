@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --main-color: seagreen;
+}
+
+/* 공통적인 부분 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+li { list-style: none; }
+a { color: inherit; text-decoration: none; }
+input, select, textarea { outline: none; font-family: inherit; }
+input, select { width: 300px; }
+button { cursor: pointer; font-family: inherit; }
+
+#wrap {
+    font-size: 1em;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.inner {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+    /* header */
+header{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-color: var(--main-color);
+    color: #fff;
+    position: fixed;
+    /* margin-bottom: 50px; */
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+header .inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+}
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#headerBtns {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+#headerBtns button {
+    background-color: transparent;
+    color: #fff;
+    margin-right: 16px;
+    font-size: 14px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 6px 8px;
+    transition: 0.5s;
+}
+#headerBtns button:hover {
+    background-color: #fff;
+    color: var(--main-color);
+}
+#logout {
+    margin-left: 16px;
+}
+#headerBtns i {
+    font-size: 24px;
+    line-height: 80px;
+}
+    /* header // */
+
+main {
+    margin-top: 130px;
+}
+
+h2 {
+    text-align: center;
+    margin: 40px 0;
+}
+
+    /* footer */
+footer{
+    width: 100%;
+    border-top: 3px solid var(--main-color);
+    height: 70px;
+    line-height: 70px;
+    margin-top: 40px;
+}
+footer .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btnStyle {
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 16px;
+}
+    /* footer // */
+/* 공통적인 부분 // */
+
+
+/* 반응형 */
+@media screen and (max-width: 992px) {
+    header h1 {
+        left: 5%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #wrap {
+        font-size: 0.8rem;
+    }
+    button {
+        font-size: 0.5rem !important;
+    }
+    header {
+        height: 60px;
+    }
+    header .inner {
+        height: 60px;
+    }
+    #headerBtns i {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    header {
+        height: 100px;
+    }
+    header h1 {
+        left: 50%;
+        top: 75%;
+        transform: translate(-50%, -50%);
+    }
+    footer {
+        line-height: 40px;
+    }
+    footer .inner {
+        flex-direction: column;
+    }
+    footer address {
+        font-size: 0.5rem;
+    }
+}

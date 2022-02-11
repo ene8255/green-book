@@ -1,8 +1,8 @@
-<?php include_once '../include/mem_header.php'; ?>
+<?php include_once 'include/header.php'; ?>
         <main>
             <h2>로그인</h2>
             <table id="login">
-                <form action="../process/login_process.php" id="loginForm" method="post">
+                <form action="process/login_process.php" id="loginForm" method="post">
                     <tr>
                         <th>아이디</th>
                         <td>
