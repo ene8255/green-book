@@ -129,18 +129,12 @@
     }
 }
 
-@media screen and (max-width: 992px) {
-    #slide-group-view {
-        height: 25vh;
-    }
-}
-
 @media screen and (max-width: 800px) {
     #slider {
         margin-bottom: 56px;
     }
     #slide-group-view {
-        height: 20vh;
+        height: 30vh;
         border-radius: 16px;
     }
     #indicator li {
@@ -185,8 +179,5 @@
 @media screen and (max-width: 375px) {
     #slider {
         margin-top: 140px;
-    }
-    #slide-group-view {
-        height: 10vh;
     }
 }

@@ -2,7 +2,8 @@
     // 다른 파일에서 데이터베이스 정보 가져오기
     include '../config/rds.php';
     // mysql 연결
-    $conn = mysqli_connect($host, $user, $pw, $db);
+    // $conn = mysqli_connect($host, $user, $pw, $db);
+    $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
     // 쿼리문 정의 (member 테이블에서 해당 id와 pw를 가진 계정 정보 가져오기)
     $sqlstr =  "select * from member
                 where id='{$_POST['userId']}' and pw='{$_POST['userPw']}'";
@@ -16,7 +17,8 @@
         include '../config/admin.php';
 
         // 아이디와 패스워드가 관리자 정보와 일치 하는지 아닌지 확인
-        if($row['id'] === $admin_id && $row['pw'] === $admin_pw) {
+        // if($row['id'] === $admin_id && $row['pw'] === $admin_pw) {
+        if($row['id'] === getenv('ADMIN_ID') && $row['pw'] === getenv('ADMIN_PW')) {
             session_start();
             // 일치하면 관리자 세션 생성
             $_SESSION['admin'] = $row['name'];

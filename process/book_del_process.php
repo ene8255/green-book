@@ -4,7 +4,8 @@
 
     // mysql 연결
     include '../config/rds.php';
-    $conn = mysqli_connect($host, $user, $pw, $db);
+    // $conn = mysqli_connect($host, $user, $pw, $db);
+    $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
 
     // sql 쿼리문 정의 (받아온 imgsrc 데이터와 일치하는 행 제거)
     $sqlstr = "delete from bestseller where imgsrc = '{$imgsrc}'";

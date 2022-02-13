@@ -2,7 +2,8 @@
     // 다른 파일에서 데이터베이스 정보 가져오기
     include '../config/rds.php';
     // mysql 연결
-    $conn = mysqli_connect($host, $user, $pw, $db);
+    // $conn = mysqli_connect($host, $user, $pw, $db);
+    $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
     // $hashedPassword = password_hash($_POST['userPw'], PASSWORD_DEFAULT);
     // echo $hashedPassword;
 
