@@ -160,6 +160,13 @@
     #view_top img {
         width: 70%;
     }
+    #view_middle ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    #view_middle ul li {
+        margin-bottom: 8px;
+    }
     #view_middle > div {
         width: 80%;
     }
@@ -170,15 +177,5 @@
     }
     #writeReview {
         width: 80%;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    #view_middle ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    #view_middle ul li {
-        margin-bottom: 8px;
     }
 }
