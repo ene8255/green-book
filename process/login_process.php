@@ -43,7 +43,7 @@
 ?>
         <script>
             alert('아이디와 비밀번호가 맞지 않습니다.');
-            location.href = "../member/login.php";
+            location.href = "../login.php";
         </script>
 <?php
     }
