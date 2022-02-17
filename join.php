@@ -22,7 +22,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>비밀번호체크</th>
+                        <th>비밀번호확인</th>
                         <td>
                             <input type="password" name="userPwch" id="userPwch" placeholder="비밀번호와 일치하게 입력해주세요" required>
                         </td>
@@ -58,11 +58,11 @@
             if(name.value !== "" && id.value !== "" && pw.value !== "" && pwch.value !== "") {
                 // 비밀번호가 8자리 이상인지 확인
                 if(pw.value.length >= 8){
-                    // 비밀번호와 비밀번호체크의 값이 같은지 확인
+                    // 비밀번호와 비밀번호확인의 값이 같은지 확인
                     if(pw.value == pwch.value){
                         joinForm.submit();
                     }else {
-                        alert('비밀번호와 비밀번호체크가 일치하지 않습니다.');
+                        alert('비밀번호와 비밀번호확인이 일치하지 않습니다.');
                         return false;
                     }
                 }else {

@@ -291,4 +291,13 @@
     #slider {
         margin-top: 140px;
     }
+    #new h2 {
+        margin-bottom: 0;
+    }
+    #hot {
+        padding: 0;
+    }
+    #hot ul {
+        width: 50%;
+    }
 }
