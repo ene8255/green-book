@@ -69,11 +69,16 @@
                             if(isset($_SESSION['username'])){
                                 echo "<tr>";
                                 echo "<td class='txtCntr'>별점</td>";
-                                echo "<td><input type='text' name='star' id='star'> / 5</td>";
+                                echo "<td>
+                                        <input type='text' name='star' id='star' placeholder='1~5' required> 
+                                        / 5
+                                      </td>";
                                 echo "</tr>";
                                 echo "<tr>";
                                 echo "<td class='txtCntr'>감상평</td>";
-                                echo "<td><textarea name='comment' cols='80' rows='3'></textarea></td>";
+                                echo "<td>
+                                        <textarea name='comment' cols='80' rows='3'></textarea>
+                                      </td>";
                                 echo "</tr>";
                                 echo "<tr>";
                                 echo "<td colspan='2' class='txtCntr'>
@@ -82,7 +87,9 @@
                                       </td>";
                                 echo "</tr>";
                             }else{
-                                echo "<tr><td>로그인 하시면 리뷰를 작성할 수 있습니다!</td></tr>";
+                                echo "<tr>
+                                        <td>로그인 하시면 리뷰를 작성할 수 있습니다!</td>
+                                      </tr>";
                             }
                         ?>
                     </table>

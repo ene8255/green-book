@@ -5,8 +5,10 @@
         // 다른 파일에서 데이터베이스 정보 가져오기
         include 'config/rds.php';
         // mysql 연결하기
-        // $conn = mysqli_connect($host, $user, $pw, $db);
-        $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
+        // 개발
+        $conn = mysqli_connect($host, $user, $pw, $db);
+        // 배포
+        // $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
         // 쿼리 수행한 결과를 리턴하기
         $result = mysqli_query($conn, $sql);
         return $result;

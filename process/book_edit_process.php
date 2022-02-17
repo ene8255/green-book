@@ -23,8 +23,10 @@
 
     // 4. mysql 연결
     include '../config/rds.php';
-    // $conn = mysqli_connect($host, $user, $pw, $db);
-    $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
+    // 개발
+    $conn = mysqli_connect($host, $user, $pw, $db);
+    // 배포
+    // $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
 
     // 5. 원래 이미지를 사용하는지 안 하는지 확인
     if($_POST['originalCk'] === "on" || !$tempFile) {

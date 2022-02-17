@@ -87,6 +87,9 @@
 /* book_view.php + book_review.php // */
 
 /* book_review.php */
+#view_content input::placeholder {
+    color: #aaa;
+}
 #view_content ul li {
     background-color: #eee;
     padding: 16px;

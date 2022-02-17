@@ -18,7 +18,7 @@
                     <tr>
                         <th>비밀번호</th>
                         <td>
-                            <input type="password" name="userPw" id="userPw" placeholder="비밀번호는 8자리로 입력해주세요" required>
+                            <input type="password" name="userPw" id="userPw" placeholder="비밀번호는 8자리 이상으로 입력해주세요" required>
                         </td>
                     </tr>
                     <tr>
@@ -54,17 +54,23 @@
     
         // 회원가입 버튼을 클릭하면 이벤트가 실행됨
         joinBtn.addEventListener('click',function(){
-            // 비밀번호가 8자리 이상인지 확인
-            if(pw.value.length >= 8){
-                // 비밀번호와 비밀번호체크의 값이 같은지 확인
-                if(pw.value == pwch.value){
-                    joinForm.submit();
+            // 모든 input에 value가 있는지 확인
+            if(name.value !== "" && id.value !== "" && pw.value !== "" && pwch.value !== "") {
+                // 비밀번호가 8자리 이상인지 확인
+                if(pw.value.length >= 8){
+                    // 비밀번호와 비밀번호체크의 값이 같은지 확인
+                    if(pw.value == pwch.value){
+                        joinForm.submit();
+                    }else {
+                        alert('비밀번호와 비밀번호체크가 일치하지 않습니다.');
+                        return false;
+                    }
                 }else {
-                    alert('비밀번호와 비밀번호체크가 일치하지 않습니다.');
+                    alert('비밀번호는 8자리 이상이어야 합니다.');
                     return false;
                 }
             }else {
-                alert('비밀번호는 8자리 이상이어야 합니다.');
+                alert('모든 입력칸을 채워주세요!');
                 return false;
             }
         })
