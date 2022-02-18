@@ -25,13 +25,16 @@
 }
 
 #deleteAll button {
-    background-color: var(--main-color);
+    background-color: transparent;
+    border: 2px solid #333;
     border-radius: 8px;
-    color: #fff;
+    color: inherit;
+    font-weight: bold;
     padding: 5px;
 }
 #deleteAll button:hover {
-    background-color: coral;
+    color: orangered;
+    border: 2px solid orangered;
 }
 /* book_cart.php // */
 

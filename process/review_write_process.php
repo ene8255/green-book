@@ -5,9 +5,9 @@
     include '../config/rds.php';
     // mysql 연결
     // 개발
-    $conn = mysqli_connect($host, $user, $pw, $db);
+    // $conn = mysqli_connect($host, $user, $pw, $db);
     // 배포
-    // $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
+    $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
 
     // 1. member 테이블에서 로그인된 계정의 데이터 가져오기
     // 쿼리문 정의
@@ -16,17 +16,13 @@
     // 쿼리문 수행
     $result1 = mysqli_query($conn, $sqlstr1);
     $row = mysqli_fetch_array($result1);
-    // 가져온 id 데이터 가공
-    $id = $row['id'];
-    $id[2] = '*';
-    $id[3] = '*';
     
     // 별점 데이터가 1~5 사이의 숫자인지 확인
     if($_POST['star'] === '1' || $_POST['star'] === '2' || $_POST['star'] === '3' || $_POST['star'] === '4' || $_POST['star'] === '5') {
         // 2. review 테이블에 리뷰 데이터 추가
         // 쿼리문 정의
         $sqlstr2 =  "insert into review(title, date, star, comment, id)
-                    values('{$_POST['title']}', now(), '{$_POST['star']}', '{$_POST['comment']}', '{$id}')";
+                    values('{$_POST['title']}', now(), '{$_POST['star']}', '{$_POST['comment']}', '{$row['id']}')";
         // 쿼리문 수행
         $result2 = mysqli_query($conn, $sqlstr2);
 

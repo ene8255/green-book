@@ -243,7 +243,7 @@
 @media screen and (max-width: 576px) {
     /* carousel slider */
     #slider {
-        margin-top: 100px;
+        margin-top: 120px;
         margin-bottom: 40px;
     }
     #slide-group-view {
@@ -289,15 +289,21 @@
 
 @media screen and (max-width: 375px) {
     #slider {
-        margin-top: 140px;
+        margin-bottom: 20px;
     }
     #new h2 {
         margin-bottom: 0;
+    }
+    #new img {
+        min-width: 60px;
     }
     #hot {
         padding: 0;
     }
     #hot ul {
-        width: 50%;
+        width: 60%;
+    }
+    #hot img {
+        min-width: 60px;
     }
 }

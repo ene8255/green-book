@@ -35,9 +35,9 @@
             include '../config/rds.php';
             // mysql 연결
             // 개발
-            $conn = mysqli_connect($host, $user, $pw, $db);
+            // $conn = mysqli_connect($host, $user, $pw, $db);
             // 배포
-            // $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
+            $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
             // 쿼리문 정의 (bestseller 테이블에 데이터 추가)
             $sqlstr =  "insert into bestseller(title, writer, publisher, pub_date, price, description, imgsrc, genre)
                         values('{$title}', '{$writer}', '{$publisher}', '{$pub_date}', '{$price}', '{$descFile}', '{$resFile}', '{$genre}')";

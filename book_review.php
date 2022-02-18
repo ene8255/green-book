@@ -105,7 +105,12 @@
                         $result2 = mysql($sqlstr2);
                         // 리뷰 결과값의 갯수만큼 li 요소 나타내기
                         while($row2 = mysqli_fetch_array($result2)){
-                            echo "<li>{$row2['id']} ";
+                            // 가져온 id 데이터 가공
+                            $id = $row2['id'];
+                            $id[2] = '*';
+                            $id[3] = '*';
+
+                            echo "<li>{$id} ";
                             echo "<span class='reviewDate'>{$row2['date']}</span>";
                             for($i=0; $i<$row2['star']; $i++){
                                 echo "⭐️";

@@ -3,9 +3,9 @@
     include '../config/rds.php';
     // mysql 연결
     // 개발
-    $conn = mysqli_connect($host, $user, $pw, $db);
+    // $conn = mysqli_connect($host, $user, $pw, $db);
     // 배포
-    // $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
+    $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
     // $hashedPassword = password_hash($_POST['userPw'], PASSWORD_DEFAULT);
     // echo $hashedPassword;
 

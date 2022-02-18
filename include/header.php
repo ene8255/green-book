@@ -6,9 +6,9 @@
         include 'config/rds.php';
         // mysql 연결하기
         // 개발
-        $conn = mysqli_connect($host, $user, $pw, $db);
+        // $conn = mysqli_connect($host, $user, $pw, $db);
         // 배포
-        // $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
+        $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
         // 쿼리 수행한 결과를 리턴하기
         $result = mysqli_query($conn, $sql);
         return $result;
@@ -75,6 +75,9 @@
                             $name = $_SESSION['username'] ?? $_SESSION['admin'];
                             echo "<span>{$name}님 안녕하세요 :) </span>";
                             echo "<button onclick='location.href=\"process/logout_process.php\"' id='logout'> 로그아웃</button>";
+                            echo "<a href='mypage.php'>
+                                    <i class='material-icons'>account_circle</i>
+                                  </a>";
                             // 카트에 상품이 있는지 없는지 구분
                             cartIcon();
                         }else{

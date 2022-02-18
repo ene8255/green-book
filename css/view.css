@@ -90,16 +90,6 @@
 #view_content input::placeholder {
     color: #aaa;
 }
-#view_content ul li {
-    background-color: #eee;
-    padding: 16px;
-    margin-bottom: 16px;
-}
-.reviewDate {
-    font-size: 14px;
-    float: right;
-}
-
 #writeReview {
     width: 90%;
     margin-top: 40px;
@@ -130,6 +120,16 @@
 #writeReview .txtCntr {
     text-align: center;
     width: 20%;
+}
+
+#view_content ul li {
+    background-color: #eee;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.reviewDate {
+    font-size: 14px;
+    float: right;
 }
 /* book_review.php // */
 
