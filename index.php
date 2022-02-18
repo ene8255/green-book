@@ -57,7 +57,7 @@
                 <h2>화제의 책</h2>
                 <div>
                     <a href='book_view.php?no=4'>
-                        <img src="images/미드나잇 라이브러리.jpeg" alt="">
+                        <img src="images/미드나잇 라이브러리.png" alt="">
                     </a>
                     <ul class="eDesc">
                         <li>
