@@ -16,14 +16,14 @@
                     // 장바구니에 담긴 상품만 표시하기
                     if(isset($_SESSION["{$row['title']}"])){
                         // imgsrc 데이터는 가공하여 사용함 (이미지를 업로드 할때 앞에 붙여진 ../ 제거)
-                        $imgsrc = explode("../", $row['imgsrc']);
+                        // $imgsrc = explode("../", $row['imgsrc']);
                         // 가격 데이터는 number_format 함수를 이용하여 천단위 마다 ,를 넣어줌
                         $price = number_format($row['price']);
                         // 로그인 되어 있는 경우에 표시할 가격
                         $userPrice = number_format($row['price'] * 0.9);
                         echo "<tr>";
                         echo "<td class='info'>
-                                <img src='{$imgsrc[1]}' width='50'>
+                                <img src='{$row['imgsrc']}' width='50'>
                                 <span>{$row['title']}</span>
                               </td>";
                         // 로그인 되어 있는 경우와 아닌 경우 구분하기

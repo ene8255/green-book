@@ -5,12 +5,12 @@
         $result = mysql($sqlstr);
         $row = mysqli_fetch_array($result);
         // imgsrc 데이터는 가공하여 사용함
-        $imgsrc = explode("../", $row['imgsrc']);
+        // $imgsrc = explode("../", $row['imgsrc']);
     ?>
     <main>
         <section id="view_top" class="inner">
             <p>
-                <img src="<?=$imgsrc[1]?>" width="300">
+                <img src="<?=$row['imgsrc']?>" width="300">
             </p>
             <h2><?=$row['title']?></h2>
         </section>

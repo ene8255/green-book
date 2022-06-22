@@ -5,7 +5,7 @@
         $result = mysql($sqlstr);
         $row = mysqli_fetch_array($result);
         // imgsrc 데이터는 가공하여 사용함
-        $imgsrc = explode("../", $row['imgsrc']);
+        // $imgsrc = explode("../", $row['imgsrc']);
     ?>
     <main>
         <h2>책 수정하기</h2>
