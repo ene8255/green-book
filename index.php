@@ -5,10 +5,10 @@
         // 가져온 데이터 갯수만큼 li 요소 생성
         while($row = mysqli_fetch_array($result)) {
             // imgsrc 데이터는 가공하여 사용함 (이미지를 업로드 할때 앞에 붙여진 ../ 제거)
-            $imgsrc = explode("../", $row['imgsrc']);
+            // $imgsrc = explode("../", $row['imgsrc']);
             echo "<li>
                     <a href='book_view.php?no={$row['no']}'>
-                        <img src='{$imgsrc[1]}' alt='책 표지' width='200' height='300'>
+                        <img src='{$row['imgsrc']}' alt='책 표지' width='200' height='300'>
                     </a>
                   </li>";
         }
@@ -39,10 +39,10 @@
                         $sqlstr = "select * from bestseller order by pub_date desc limit 3";
                         $result = mysql($sqlstr);
                         while($row = mysqli_fetch_array($result)) {
-                            $imgsrc = explode("../", $row['imgsrc']);
+                            // $imgsrc = explode("../", $row['imgsrc']);
                             echo "<li>
                                     <a href='book_view.php?no={$row['no']}'>
-                                        <img src='{$imgsrc[1]}' alt='책 표지'>
+                                        <img src='{$row['imgsrc']}' alt='책 표지'>
                                     </a>
                                     <div class='eDesc'>
                                         <p>{$row['title']}</p>
