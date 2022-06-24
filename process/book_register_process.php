@@ -42,8 +42,9 @@
             // $imgUpload = move_uploaded_file($tempFile, $resFile);
             // 이미지 파일을 s3 bucket에 업로드함
             $fp = fopen($_FILES['imgFile']['tmp_name'], 'r');
+            $bucket = getenv("S3_BUCKET_NAME");
             $result = $s3Client->putObject([
-                'Bucket' => getenv("S3_BUCKET_NAME"),
+                'Bucket' => $bucket,
                 'Key' => $resFile,
                 'Body' => $fp,
             ]);
@@ -62,7 +63,7 @@
             // 배포
             $conn = mysqli_connect(getenv("RDS_HOST"), getenv("RDS_USER"), getenv("RDS_PW"), getenv("RDS_DB"));
             // imgUrl 정의
-            $imgUrl = "https://{$getenv('S3_BUCKET_NAME')}.s3.amazonaws.com/{$resFile}";
+            $imgUrl = "https://{$bucket}.s3.amazonaws.com/{$resFile}";
             // 쿼리문 정의 (bestseller 테이블에 데이터 추가)
             $sqlstr =  "insert into bestseller(title, writer, publisher, pub_date, price, description, imgsrc, genre)
                         values('{$title}', '{$writer}', '{$publisher}', '{$pub_date}', '{$price}', '{$descFile}', '{$imgUrl}', '{$genre}')";
