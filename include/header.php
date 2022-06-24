@@ -1,4 +1,20 @@
 <?php
+    // aws-sdk-php 사용 설정
+    require '../vendor/autoload.php';
+    use Aws\S3\S3Client;
+    use Aws\Exception\AwsException;
+
+    $awsConfigs = [
+        'version'  => 'latest',
+        'region'   => 'us-east-1',
+        'credentials' => [
+            'key'    => getenv("S3_ACCESS_KEY_ID"), 
+            'secret' => getenv("S3_SECRET_ACCESS_KEY"),
+        ],
+    ];
+    $sdk = new Aws\Sdk($awsConfigs);
+
+    
     // mysql 연결 & 쿼리 수행
     // default 쿼리문은 "select * from bestseller"로 정함
     function mysql($sql="select * from bestseller") {

@@ -18,7 +18,7 @@
     // 수행 결과가 성공적인지 아닌지 확인
     if($result) {
         // 성공하면 imgsrc 경로의 이미지 파일 제거
-        unlink($imgsrc);
+        // unlink($imgsrc);
 ?>
     <script>
         alert("삭제되었습니다.");

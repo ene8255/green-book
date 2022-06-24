@@ -1,4 +1,7 @@
 <?php
+    // s3Client 정의
+    $s3Client = $sdk->createS3();
+
     // 1. POST 방식으로 받은 데이터를 변수로 정의
     $no = $_POST['no'];
     $title = $_POST['title'];
@@ -19,7 +22,7 @@
     
     // 3. 이미지 파일 처리
     $tempFile = $_FILES['imgFile']['tmp_name'];
-    $resFile = "../images/{$_FILES['imgFile']['name']}";
+    $resFile = "upload/{$_FILES['imgFile']['name']}";
 
     // 4. mysql 연결
     include '../config/rds.php';
@@ -40,12 +43,24 @@
                    where no={$no}";
     }else {
         // 임시 저장된 이미지 파일을 새로 저장할 위치로 이동시킴
-        $imgUpload = move_uploaded_file($tempFile, $resFile);
+        // $imgUpload = move_uploaded_file($tempFile, $resFile);
+
+        // 이미지 파일을 s3 bucket에 업로드함
+        $fp = fopen($_FILES['imgFile']['tmp_name'], 'r');
+        $bucket = getenv("S3_BUCKET_NAME");
+        $result = $s3Client->putObject([
+            'Bucket' => $bucket,
+            'Key' => $resFile,
+            'Body' => $fp,
+        ]);
+
+        // imgUrl 정의
+        $imgUrl = "https://{$bucket}.s3.amazonaws.com/{$resFile}";
 
         // 쿼리문 정의 (특정 데이터 수정)
         $sqlstr = "update bestseller
                    set title='{$title}', writer='{$writer}', publisher='{$publisher}', pub_date='{$pub_date}', 
-                   price={$price}, description='{$descFile}', imgsrc='{$resFile}', genre='{$genre}'
+                   price={$price}, description='{$descFile}', imgsrc='{$imgUrl}', genre='{$genre}'
                    where no={$no}";
     }
 

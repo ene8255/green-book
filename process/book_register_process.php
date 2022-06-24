@@ -1,18 +1,5 @@
 <?php
-    // aws-sdk-php 사용 설정
-    require '../vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
-
-    $awsConfigs = [
-        'version'  => 'latest',
-        'region'   => 'us-east-1',
-        'credentials' => [
-            'key'    => getenv("S3_ACCESS_KEY_ID"), 
-            'secret' => getenv("S3_SECRET_ACCESS_KEY"),
-        ],
-    ];
-    $sdk = new Aws\Sdk($awsConfigs);
+    // s3Client 정의
     $s3Client = $sdk->createS3();
 
     // POST 방식으로 받은 데이터를 변수로 정의
