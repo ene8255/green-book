@@ -4,6 +4,7 @@
 ![Badge](https://img.shields.io/badge/CSS3-1572B6.svg?&logo=CSS3&logoColor=fff)
 ![Badge](https://img.shields.io/badge/JavaScript-F7DF1E.svg?&logo=JavaScript&logoColor=fff)
 ![Badge](https://img.shields.io/badge/AmazonAWS-232F3E.svg?&logo=AmazonAWS&logoColor=fff)
+![Badge](https://img.shields.io/badge/AmazonS3-569A31.svg?&logo=AmazonS3&logoColor=fff)
 ![Badge](https://img.shields.io/badge/MySQL-4479A1.svg?&logo=MySQL&logoColor=fff)
 ![Badge](https://img.shields.io/badge/Heroku-430098.svg?&logo=Heroku&logoColor=fff)
 
@@ -13,14 +14,15 @@
 ---
 
 - PHP로 생성한 온라인 서점 형식의 프로젝트 사이트 입니다.
-- Amazon RDS로 구축한 MySQL 데이터베이스를 사용하였고, 사이트 배포는 Heroku를 사용하였습니다.
+- Amazon RDS로 구축한 MySQL 데이터베이스를 사용하였고, Amazon S3 bucket을 사용하여 이미지 파일을 관리합니다.
+- 사이트 배포는 Heroku를 사용하였습니다.
 <br/>   
 
 - 구현한 기능
   + 베스트셀러를 분야별로 분류해서 보기 (GET)
   + 카트에 상품 담기, 카트에 담긴 상품 삭제하기
   + 회원가입, 로그인 하기
-  + 로그인시 가능한 추가적 기능:   
+  + 로그인시 가능한 추가 기능:   
     + 각 베스트셀러 상세 페이지에서 리뷰 쓰기
     + 마이페이지에서 비밀번호를 변경하거나 작성한 리뷰를 삭제할 수 있음
     + 각 상품의 가격이 10% 할인된 회원가로 표시됨   
