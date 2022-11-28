@@ -6,16 +6,15 @@
 ![Badge](https://img.shields.io/badge/AmazonAWS-232F3E.svg?&logo=AmazonAWS&logoColor=fff)
 ![Badge](https://img.shields.io/badge/AmazonS3-569A31.svg?&logo=AmazonS3&logoColor=fff)
 ![Badge](https://img.shields.io/badge/MySQL-4479A1.svg?&logo=MySQL&logoColor=fff)
-![Badge](https://img.shields.io/badge/Heroku-430098.svg?&logo=Heroku&logoColor=fff)
 
 ---
 - 프로젝트 소요 기간: 14일
-- 사이트 주소: https://green-book-i.herokuapp.com/
+- 사이트 주소: http://tzcebfpvin.us16.qoddiapp.com/
 ---
 
 - PHP로 생성한 온라인 서점 형식의 프로젝트 사이트 입니다.
 - Amazon RDS로 구축한 MySQL 데이터베이스를 사용하였고, Amazon S3 bucket을 사용하여 이미지 파일을 관리합니다.
-- 사이트 배포는 Heroku를 사용하였습니다.
+- 사이트 배포는 Qoddi를 사용하였습니다.
 <br/>   
 
 - 구현한 기능
